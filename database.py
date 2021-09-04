@@ -107,7 +107,6 @@ class DataBase:
     # 2nd table
     def insert_history(self, t_type, t_amount, cti):
         """
-
         :param t_type: transaction_type (example: withdraw), str
         :param t_amount: transaction_amount (example: 321.2), int/float
         :param cti: customer_transaction_id- same as customer_id in customers table, int
@@ -132,10 +131,7 @@ class DataBase:
         return self.c.fetchall()
 
     # closing connection
-    def close_connection(self):
-        # or
-        # def __del__(self):
-        #   self.conn.close()
+    def close_connection(self):  # def __del__(self)
         self.conn.close()
 
 

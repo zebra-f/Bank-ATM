@@ -174,19 +174,23 @@ def main():
             '2 withdraw,\n'
             '3 transfer,\n'
             '4 history, \n'
+            '7 personal info, \n'
             '9 delete account, \n'
             '0 exit bank app: '
         ).strip()
+
         if x == '1':
             y = amount_check()
             ui.deposit(y)
             clear_terminal()
             continue
+
         elif x == '2':
             y = amount_check()
             ui.withdraw(y)
             clear_terminal()
             continue
+
         elif x == '3':
             t_sum = amount_check()
             while True:
@@ -208,23 +212,34 @@ def main():
                     ui.transfer(t_sum, nm)
                     clear_terminal()
                     break
+
         elif x == '4':
             clear_terminal()
             ui.print_history()
             input(' \nPress enter to continue. ')
             clear_terminal()
+
+        elif x == '7':
+            clear_terminal()
+            print(ui)
+            input(' \nPress enter to continue. ')
+            clear_terminal()
+
         elif x == '9':
+            # needs "are you sure" input
             ui.delete_customer()
             print('Goodbye')
             time.sleep(1)
             clear_terminal()
             exit()
+
         elif x == '0':
             print('Goodbye!')
             time.sleep(1)
             clear_terminal()
             dbi.close_connection()
             exit()
+
         else:
             wrong_input('Something went wrong! Try again.')
             clear_terminal()
@@ -232,4 +247,5 @@ def main():
             continue
 
 
-main()
+if __name__ == '__main__':
+    main()

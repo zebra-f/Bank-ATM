@@ -87,6 +87,20 @@ class BankCustomer:
     def delete_customer(self):
         dbi.delete_customer(self.nick_name)
 
+    def __repr__(self):
+        if self.customer_type == 'credit':
+            return f'CreditUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
+        elif self.customer_type == 'debit':
+            return f'CreditUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
+        else:
+            return f'BankUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
+
+    def __str__(self):
+        return f'Name: {self.first_name} {self.last_name}\n' \
+               f'Nickname: {self.nick_name}\n' \
+               f'Account: {self.customer_type}\n' \
+               f'Id: {self.cti}'
+
 
 class CreditUser(BankCustomer):
 
