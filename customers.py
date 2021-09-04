@@ -91,7 +91,7 @@ class BankCustomer:
         if self.customer_type == 'credit':
             return f'CreditUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
         elif self.customer_type == 'debit':
-            return f'CreditUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
+            return f'DebitUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
         else:
             return f'BankUser({self.first_name}, {self.last_name}, password, {self.nick_name}, {self.customer_type})'
 
